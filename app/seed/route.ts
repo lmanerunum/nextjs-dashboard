@@ -115,3 +115,5 @@ export async function GET() {
     return Response.json({ error }, { status: 500 });
   }
 }
+
+console.log(process.env.POSTGRES_URL);
