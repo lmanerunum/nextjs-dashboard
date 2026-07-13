@@ -2,6 +2,7 @@ import bcrypt from 'bcryptjs';
 import postgres from 'postgres';
 import { invoices, customers, revenue, users } from '../lib/placeholder-data';
 
+console.log(process.env.POSTGRES_URL);
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 async function seedUsers() {
@@ -115,5 +116,3 @@ export async function GET() {
     return Response.json({ error }, { status: 500 });
   }
 }
-
-console.log(process.env.POSTGRES_URL);
